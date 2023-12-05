@@ -10,12 +10,13 @@ app.post('/smartsheet', async (req, res) => {
   try {
         const body = req.body;
 
+        console.log(body);
+
         // Callback could be due to validation, status change, or actual sheet change events
         if (body.challenge) {
             console.log("Received verification callback");
             // Verify we are listening by echoing challenge value
-            res.status(200)
-                .json({ smartsheetHookResponse: body.challenge });
+            res.status(200).json({ smartsheetHookResponse: body.challenge });
         } else if (body.events) {
             console.log(`Received event callback with ${body.events.length} events at ${new Date().toLocaleString()}`);
 
