@@ -8,6 +8,7 @@
     "nodemon": "^3.0.1"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"nodemon index.js\" \"ngrok http --domain=presumably-oriented-cub.ngrok-free.app 3000\""
+    "watch": "nodemon index.js",
+    "start": "node index.js"
   }
 }
