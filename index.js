@@ -10,7 +10,9 @@ app.post('/smartsheet', async (req, res) => {
   try {
         const body = req.body;
 
-        console.log(body);
+        console.log("req: ", req);
+        console.log("req: ", req.baseUrl);
+        console.log("res: ", res);
 
         // Callback could be due to validation, status change, or actual sheet change events
         if (body.challenge) {
